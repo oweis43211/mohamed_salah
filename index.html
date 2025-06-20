@@ -1,149 +1,47 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>تسجيل الدخول - مؤسسة الإصلاح الخيرية</title>
-  <style>
-    body {
-      background-color: #d1d1d1;
-      font-family: 'Tahoma', sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    .login-container {
-      background-color: #ffffff70;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0, 128, 0, 0.2);
-      width: 320px;
-    }
-
-    .login-container h2 {
-      text-align: center;
-      color: #007f3e;
-      margin-bottom: 25px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 8px;
-      color: #333;
-    }
-
-    input[type="text"],
-    input[type="password"] {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 14px;
-    }
-
-    .show-password {
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      font-size: 13px;
-      color: #555;
-    }
-
-    .show-password input {
-      margin-left: 6px;
-    }
-
-    button {
-      width: 100%;
-      background-color: #009f4d;
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 8px;
-      font-size: 15px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #007f3e;
-    }
-
-    .error-message {
-      color: red;
-      text-align: center;
-      margin-bottom: 10px;
-      display: none;
-    }
-
-    .message {
-      margin-top: 50px;
-      font-size: 22px;
-      color: #009f4d;
-      font-weight: bold;
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحتي التعليمية</title>
 </head>
+
 <body>
 
-  <div class="login-container">
-    <h2>مؤسسة الإصلاح الخيرية</h2>
-    <div id="error" class="error-message">اسم المستخدم أو كلمة المرور غير صحيحة</div>
-    <form onsubmit="return validateLogin(event)">
-      <label for="username">الاسم</label>
-      <input type="text" id="username" name="username" placeholder="أدخل اسمك" required>
+    <header>
+        <h1>مرحبا بكم في موقعي التعليمي</h1>
+    </header>
 
-      <label for="password">كلمة المرور</label>
-      <input type="password" id="password" name="password" placeholder="أدخل كلمة المرور" required>
+    <main>
+        <section>
+            <h2>أهداف الموقع</h2>
+            <ul>
+                <li>تعلم أساسيات HTML</li>
+                <li>ممارسة كتابة كود HTML</li>
+                <li>إنشاء صفحات ويب بسيطة</li>
+            </ul>
+        </section>
 
-      <div class="show-password">
-        <label for="togglePassword">إظهار كلمة المرور</label>
-        <input type="checkbox" id="togglePassword" onclick="togglePasswordVisibility()">
-      </div>
+        <section>
+            <h2>صور تعليمية</h2>
+            <img src="https://via.placeholder.com/200x150?text=HTML1" alt="صورة HTML 1">
+            <img src="https://via.placeholder.com/200x150?text=HTML2" alt="صورة HTML 2">
+            <img src="https://via.placeholder.com/200x150?text=HTML3" alt="صورة HTML 3">
+        </section>
 
-      <button type="submit">تسجيل الدخول</button>
-    </form>
-  </div>
+        <section>
+            <h2>مصدر خارجي</h2>
+            <p>للمزيد من المعلومات، زر موقع
+                <a href="https://developer.mozilla.org/ar/docs/Web/HTML" target="_blank">MDN Web Docs</a>.
+            </p>
+        </section>
+    </main>
 
-  <!-- الرسالة أسفل الصندوق -->
-  <div class="message">رسالتنا رحمة الناس ونفعهم</div>
-
-  <script>
-    const users = [
-      { username: "msalah", password: "75" },
-      { username: "sara", password: "5678" },
-      { username: "admin", password: "adminpass" }
-    ];
-
-    function togglePasswordVisibility() {
-      const passwordField = document.getElementById("password");
-      passwordField.type = passwordField.type === "password" ? "text" : "password";
-    }
-
-    function validateLogin(event) {
-      event.preventDefault();
-
-      const username = document.getElementById("username").value.trim();
-      const password = document.getElementById("password").value.trim();
-      const errorDiv = document.getElementById("error");
-
-      const userFound = users.find(user => user.username === username && user.password === password);
-
-      if (userFound) {
-        errorDiv.style.display = "none";
-        window.location.href = "dashboard.html";
-      } else {
-        errorDiv.style.display = "block";
-      }
-
-      return false;
-    }
-  </script>
+    <footer>
+        <p>© 2025 جميع الحقوق محفوظة</p>
+    </footer>
 
 </body>
+
 </html>
